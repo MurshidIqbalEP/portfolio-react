@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { cn } from "../../lib/utils";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
@@ -7,10 +6,15 @@ import { HoverBorderGradient } from "./hover-border-gradient";
 import { FaCopy } from "react-icons/fa";
 import TiltedScroll from "./tiltedScroll";
 
-
 import Player from "lottie-react";
 
-const LottieWrapper = ({ animationData, loop }: { animationData: any; loop: boolean }) => (
+const LottieWrapper = ({
+  animationData,
+  loop,
+}: {
+  animationData: any;
+  loop: boolean;
+}) => (
   <Player
     autoplay
     loop={loop}
@@ -80,7 +84,8 @@ export const BentoGridItem = ({
       )}
       style={{
         background: "rgb(4,7,29)",
-        backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+        backgroundColor:
+          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
       <div className={`${id === 6 && "flex justify-center "} h-full`}>
@@ -93,7 +98,11 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"}`}>
+        <div
+          className={`absolute right-0 -bottom-5 ${
+            id === 5 && "w-full opacity-80"
+          }`}
+        >
           {spareImg && (
             <img
               src={spareImg}
@@ -117,7 +126,9 @@ export const BentoGridItem = ({
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
-          <div className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}>
+          <div
+            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+          >
             {title}
           </div>
 
@@ -180,7 +191,12 @@ export const BentoGridItem = ({
 
           {id === 6 && (
             <div className="mt-5 relative flex justify-center items-center">
-              <div className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}>
+              {/* Center the Lottie animation */}
+              <div
+                className={`absolute -bottom-5 left-1/2 transform -translate-x-1/2 ${
+                  copied ? "block" : "block"
+                }`}
+              >
                 <LottieWrapper animationData={animationData} loop={copied} />
               </div>
 
