@@ -114,7 +114,7 @@ export const navItems = [
       },
   
     ],
-      link: "https://bed-aura-frontend.vercel.app",
+      link: "https://bedaura.vercel.app/",
     },
     
     {
